@@ -122,16 +122,18 @@ El workflow se debe ejecutar correctamente.
 
 ![Untitled](readme-images/Image-3.png)
 
-Como conectarse a Azure.
+Ahora llegamos a un punto importante en nuestro flujo de trabajo, que es desplegar nuestro sitio web hacia Azure y que nos lleva a la pregunta ¿como conectarse a Azure?.
+
+Para conectarnos a Azure debemos generar una **identidad** (técnicamente llamada **service principal**) dentro de nuestra subscripcion de Azure, la cual permitirá conectar el Workflow de GitHub con Azure para manipular recursos o en nuestro caso, subir los archivos de nuestro sitio web a Blob Storage.
 
 Referencia:
 [https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-static-site-github-actions?tabs=userlevel#code-try-0](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-static-site-github-actions?tabs=userlevel#code-try-0)
 
 ### Genera credenciales para despliegue
 
-Puedes crear un [service principal](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object) con el comando [az ad sp create-for-rbac](https://docs.microsoft.com/en-us/cli/azure/ad/sp#az-ad-sp-create-for-rbac) en el [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/). Ejecuta el comando desde el [Azure Cloud Shell](https://shell.azure.com/) en el portal de Azure.
+Puedes crear un [service principal](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object) con el comando [az ad sp create-for-rbac](https://docs.microsoft.com/en-us/cli/azure/ad/sp#az-ad-sp-create-for-rbac) en el [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/). Puedes ejecutar el comando desde el [Azure Cloud Shell](https://shell.azure.com/) en el portal de Azure.
 
-reemplaza `myStaticSite` con el nombre de tu recurso hospedado en Azure Storage y reemplaza los id de la subscripcion y resource group.
+Reemplaza `myStaticSite` con el nombre de tu recurso hospedado en Azure Storage y reemplaza los id de la subscripcion y resource group.
 
 ![Untitled](readme-images/Image-4.png)
 
